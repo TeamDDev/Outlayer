@@ -22,5 +22,5 @@ class Records(models.Model):
     expenditure_amount=models.FloatField
 
     def __str__(self):
-    	return str(self.user)
+    	return str(self.expenditure_user)
     
