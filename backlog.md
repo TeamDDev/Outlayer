@@ -3,7 +3,8 @@
  <br />
  
  **Work completed : **
- <br /><br />
+ <br />
+ <br />
  
 Frontend : Rupal Lohani & Ishan Bhowmik
 <br />
@@ -17,8 +18,9 @@ Backend : Nishant Pandey & Ashish Kumar
 -[ x ] The particular view functionality is designed to link the backend with the signup page.<br /><br />
 
 **Work to be done : **
-<br /><br />
+<br />
+<br />
 
--[ x ] Frontend login adn signup is to be designed.
--[ x ] Home page is to be created at the forntend.
--[ x ] Frontend login/signup and home has to be linked with the backend.
+-[ x ] Frontend login adn signup is to be designed. <br />
+-[ x ] Home page is to be created at the forntend. <br />
+-[ x ] Frontend login/signup and home has to be linked with the backend. <br />
