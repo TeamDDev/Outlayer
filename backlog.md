@@ -24,3 +24,12 @@ Backend : Nishant Pandey & Ashish Kumar
 -[ x ] Frontend login adn signup is to be designed. <br />
 -[ x ] Home page is to be created at the forntend. <br />
 -[ x ] Frontend login/signup and home has to be linked with the backend. <br />
+
+___________________________________________________________________________________
+|         Task                      |  Who       |  Status      |  Expected Date  |
+|----------------------------------------------------------------------------------
+|Integrating frontend with Django   |Nishant     |In progress   |18-4-2021        |
+|Recent transaction functionality   |Nishant     |Yet to start  |19-4-2021        |
+|Modelling CSS (Log in)             |Rupal       |In progress   |18-4-2021        |
+|Modelling CSS (Sign up)            |Ishan       |In progress   |18-4-2021        |
+
