@@ -7,6 +7,53 @@ Easy to build and manage.
 <br />
 Can be run over the local server and can be used as a tool, accessible from anywhere after being deployed.
 <br />
-<br />
 
-Technology : django, html, css
+Technology used : Django, html, css
+
+Our Code Organization:
+```
+Outlayer/            <-- Repo name
+  |---outlayer/             <-- Project Outlayer root
+  |    |--- outlayer/                <-- Django root
+  |    |     |--- __init__.py
+  |    |     |--- asgi.py
+  |    |     |--- settings.py 
+  |    |     |--- urls.py
+  |    |     |--- wsgi.py  
+  |    |--- tracker/                  <-- Outlayer app
+  |    |     |--- migrations
+  |    |     |--- static/css/
+  |    |     |      |--- login
+  |    |     |      |--- signup
+  |    |     |
+  |    |     |--- templates/
+  |    |     |      |--- regiseration
+  |    |     |
+  |    |     |--- __init__.py
+  |    |     |--- admin.py
+  |    |     |--- apps.py
+  |    |     |--- forms.py
+  |    |     |--- models.py (Database model)
+  |    |     |--- tests.py
+  |    |     |--- urls.py
+  |    |     |--- views.py 
+  |    |--- manage.py
+  |
+  |--- MOMs
+  |--- BACKLOGs
+  |--- README
+       
+```
+
+Working of the Code:
+```
+                                               ____ templates
+                                              /
+                                             /
+                                            /
+         REQUEST ---- urls.py ----- views.py 
+                                            \
+                                             \
+                                              \_____ models.py
+```
+(The project is still under construction and the instantiation of the project will be updated here once completed).
