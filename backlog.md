@@ -1,37 +1,23 @@
-# Backlog
-### Code-review Week 1 (11 April 2021)
- <br />
- 
- **Work completed : **
- <br />
- <br />
- 
-Frontend : Rupal Lohani & Ishan Bhowmik
+# Code Review Week 1 (11 April 2021)
+Frontend : Ishan Bhowmik (18322) <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rupal Lohani  (18346) <br />
+
+Backend  : Ashish Kumar (18308) <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nishant Pandey (18340)<br />
 <br />
+Task distribution and progression of week 1:
 
-Backend : Nishant Pandey & Ashish Kumar
-<br /><br />
+```
+_______________________________________________________________________________________
+|         Task                         |   Who       |   Status      |   Expected Date  | 
+|--------------------------------------------------------------------------------------
+| Django project set-up & sever set-up |  Nishant    | Completed     |    01-4-2021     | 
+| Signup View implementation           |  Nishant    | Completed     |    10-4-2021     | 
+| Modelling HTML (Log in)              |  Rupal      | Completed     |    10-4-2021     | 
+| Modelling CSS (Sign up)              |  Ishan      | Completed     |    11-4-2021     | 
+| Models creation                      |  Ashish     | Completed     |    11-4-2021     |
+_______________________________________________________________________________________
 
--[ x ] Signup and login html structure created at the frontend.<br />
--[ x ] Database tables are created at the backend.<br />
--[ x ] Local server is set up.<br />
--[ x ] The particular view functionality is designed to link the backend with the signup page.<br /><br />
 
-**Work to be done : **
-<br />
-<br />
-
--[ x ] Frontend login adn signup is to be designed. <br />
--[ x ] Home page is to be created at the forntend. <br />
--[ x ] Frontend login/signup and home has to be linked with the backend. <br />
-<pre>
-___________________________________________________________________________________ <br />
-|         Task                      |  Who       |  Status      |  Expected Date  | <br />
-|---------------------------------------------------------------------------------- <br />
-|Integrating frontend with Django   |Nishant     |In progress   |18-4-2021        | <br />
-|Recent transaction functionality   |Nishant     |Yet to start  |19-4-2021        | <br />
-|Modelling CSS (Log in)             |Rupal       |In progress   |18-4-2021        | <br />
-|Modelling CSS (Sign up)            |Ishan       |In progress   |18-4-2021        | <br />
-
-<pre>
+```
 
