@@ -1,36 +1,48 @@
+{% load_static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="{% static 'css/login/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login/grid_layout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login/layout.css' %}">
     <title>Login Page</title>
 </head>
 <body>
         <div class="column-2">
             <div class="heading-primary">Out-Layer</div>
             <div class="heading-secondary"> "The Budget Tracker"</div>
+            {% csrf_token %}
 
             <div class="Form">
                 <form class="form_beginning" method="POST" id="loginform">
+
+                    <!--  username label   -->
                     <div class="form_group">
                         <label for="username" id="username" class="label_username">username</label>
                         <input type="text" name="username" class="form_input" placeholder="your username here" id="username" required>
                     </div>
 
+                    <!--  password label   -->
                     <div class="form_group">
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password "class="form_input" placeholder="your password here" id="password" required>
                     </div>
+                    {{ form.errors }}
 
+                    <!--  submit button   -->
                     <div class="form_group">
-                        <button class="button" formaction="/login">Login Now &rarr;</button>
+                        <button class="button" type="submit">Login Now &rarr;</button>
                     </div>
+
+                    <!--  sign up  -->
                     <div class="recommendation">
-                        <p class="recommendation_text">Don't have an account?</p> <a href=''><strong> Create one here. </strong></a>
+                        <p class="recommendation_text">Don't have an account?</p> <a href='outlayer/signup/'><strong> Create one here. </strong></a>
                     </div>
                 </form>
             </div>
+
         </div>
 </body>
 </html>
