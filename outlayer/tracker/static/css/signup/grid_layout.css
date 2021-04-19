@@ -1,0 +1,10 @@
+.column{
+    width:0%;  
+    float:left;
+}
+
+.column-2{
+    width:100%;  
+    float:right;
+    margin:0 auto;
+}
