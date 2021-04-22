@@ -15,7 +15,7 @@ ________________________________________________________________________________
 | Modelling CSS (Log in)             |  Rupal      | Completed     |    18-4-2021     | 
 | Modelling CSS (Sign up)            |  Ishan      | Completed     |    18-4-2021     | 
 | Admin site regirsteration          |  Ashish     | In Progress   |    18-4-2021     |
-| Login View Implementation          |  Ashish     | Yet To Start  |    20-4-2021     |
+| Login View Implementation          |  Ashish     | Completed     |    20-4-2021     |
 _______________________________________________________________________________________
 
 
