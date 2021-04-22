@@ -9,7 +9,7 @@ Easy to build and manage.
 Can run over the local server and can be used as a tool, accessible from anywhere after being deployed.
 <br />
 
-##**Technology used** : Django, HTML, CSS
+## **Technology used** : Django, HTML, CSS
 
 ## Installation
 In your terminal type: 
