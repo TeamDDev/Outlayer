@@ -13,7 +13,7 @@ Can run over the local server and can be used as a tool, accessible from anywher
 
 ## Installation
 In your terminal type: 
-```git clone https://github.com/verlitas/Budget-Tracker.git```
+```git clone https://github.com/TeamDDev/Outlayer.git```
 * Open in Visual Studio to build and run.
 * For further instructions, visit https://help.github.com
 
