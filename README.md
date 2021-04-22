@@ -9,9 +9,16 @@ Easy to build and manage.
 Can run over the local server and can be used as a tool, accessible from anywhere after being deployed.
 <br />
 
-**Technology used** : Django, HTML, CSS
+##**Technology used** : Django, HTML, CSS
 
-Our Code Organization:
+## Installation
+In your terminal type: 
+```git clone https://github.com/verlitas/Budget-Tracker.git```
+* Open in Visual Studio to build and run.
+* For further instructions, visit https://help.github.com
+
+
+## Our Code Organization:
 ```
 Outlayer/            <-- Repo name
   |---outlayer/             <-- Project Outlayer root
@@ -46,7 +53,7 @@ Outlayer/            <-- Repo name
        
 ```
 
-Working of the Code:
+## Working of the Code:
 ```
                                                ____ templates
                                               /
@@ -60,7 +67,6 @@ Working of the Code:
 (The project is still under construction and the instantiation of the project will be updated here once completed).
 <br /> 
 <br />
-
 **Check out Blogs for more information:**
 https://d-dev.medium.com/out-layer-94faca9187c4
 
