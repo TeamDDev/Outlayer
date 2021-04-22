@@ -1,14 +1,15 @@
-# Outlayer (ongoing)
-A web-based software to easify the task of recording the daily expenses and keeping track of daily budget aka **budget-tracker system**.
+# Outlayer  (Ongoing)
+
+Aim: A web-based software to easify the task of recording the daily expenses and keeping track of daily budget aka **budget-tracker system**.
 <br /> 
 <br />
 Easy to build and manage.
 <br />
 <br />
-Can be run over the local server and can be used as a tool, accessible from anywhere after being deployed.
+Can run over the local server and can be used as a tool, accessible from anywhere after being deployed.
 <br />
 
-Technology used : Django, html, css
+**Technology used** : Django, HTML, CSS
 
 Our Code Organization:
 ```
@@ -57,3 +58,9 @@ Working of the Code:
                                               \_____ models.py
 ```
 (The project is still under construction and the instantiation of the project will be updated here once completed).
+<br /> 
+<br />
+
+Check out Blogs for more information
+https://d-dev.medium.com/out-layer-94faca9187c4
+
