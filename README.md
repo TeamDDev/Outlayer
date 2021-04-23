@@ -1,4 +1,4 @@
-# Outlayer [In progress]
+# OutLayer [In progress]
 
 Aim: A web-based software to easify the task of recording the daily expenses and keeping track of daily budget aka **budget-tracker system**.
 <br /> 
