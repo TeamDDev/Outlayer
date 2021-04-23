@@ -17,7 +17,9 @@ In your terminal type:
 * Open in Visual Studio to build and run.
 * For further instructions, visit https://help.github.com
 
-
+## Design Diagram:
+![](Design%20Diagram.png)
+<br />
 ## Our Code Organization:
 ```
 Outlayer/            <-- Repo name
@@ -66,8 +68,6 @@ Outlayer/            <-- Repo name
 ```
 (The project is still under construction and the instantiation of the project will be updated here once completed).
 <br /> 
-<br />
-**The Design Diagram has been uploaded in the issues section**
 <br />
 **Check out Blogs for more information:**
 https://d-dev.medium.com/out-layer-94faca9187c4
