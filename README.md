@@ -68,6 +68,7 @@ Outlayer/            <-- Repo name
 <br /> 
 <br />
 **The design Diagram has been uploaded in the issues section**
+<br />
 **Check out Blogs for more information:**
 https://d-dev.medium.com/out-layer-94faca9187c4
 
