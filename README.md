@@ -67,6 +67,7 @@ Outlayer/            <-- Repo name
 (The project is still under construction and the instantiation of the project will be updated here once completed).
 <br /> 
 <br />
+**The design Diagram has been uploaded in the issues section**
 **Check out Blogs for more information:**
 https://d-dev.medium.com/out-layer-94faca9187c4
 
