@@ -26,7 +26,15 @@ def login_view(request):
 
 def logout_view(request):
          logout(request)
-         return redirect('login')		 
+         return redirect('login')
+        
+def app_view(request, username):
+	if request.user.is_authenticated:
+		budget_qs = UserInfo.objects.filter(name=request.user)
+		uzer_qs = BudgetInfo.objects.filter(user=request.user).order_by('-date_added')
+		return render(request,'tasks_notes/index.html',{'budget':budget_qs[0],'uzer':uzer_qs[0:5]})
+	else:
+		return render(request,'tasks_notes/index.html')
 
 
 
