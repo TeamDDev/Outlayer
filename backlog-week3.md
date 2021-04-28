@@ -15,7 +15,7 @@ ________________________________________________________________________________
 |--------------------------------------------------------------------------------------
 | Front End designing and Coding     |  Ashish     | In Progress   |    30-4-2021     | 
 | View handling and accepting request|  Rupal      | In Progress   |    30-4-2021     | 
-| User Info and profile view handling|  Ishan      | In Progress   |    30-4-2021     | 
+| Graphs Implementation on frontend  |  Ishan      | In Progress   |    30-4-2021     | 
 | Unit Testing                       |  Nishant    | In Progress   |    30-4-2021     | 
 _______________________________________________________________________________________
 
