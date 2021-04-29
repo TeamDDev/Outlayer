@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
+        <title>
+            Outlayer
+        </title>
+    </head>
+    <body>
+        <nav>
+            <div>
+                <div class = "outlayer-nav">
+                <div id="nav-hello">
+                    Hello Welcome to your own Online Budget Tracker System
+                </div>
+                <div id="nav-logout">
+                    Logout
+                </div>
+            </div>
+            </div>
+        </nav>
+        <div class="outlayer-form">
+            <div class="column-2">
+            <form id="out-input">
+                <div class="form_group">    
+                    <label for="expense_name" id="item" class="label_item">Expense name</label>                 
+                    <input type="text" name="Expense name" class="form_input" placeholder="Your expense name here" id="item" required>            
+                </div>  
+                <br>
+                <div class="form_group">    
+                    <label for="expense" id="item" class="label_item">Expense cost</label>                 
+                    <input type="text" name="Expense" class="form_input" placeholder="Your expense here" id="expense" required>            
+                </div> 
+                <br>
+                <div class="form_group">    
+                    <label for="date" id="item" class="label_item">Expense date</label>                 
+                    <input type="text" name="Date" class="form_input" placeholder="Your date here" id="date" required>            
+                </div> 
+                <br>
+                <div class="form_group">
+                    <button class="button" formaction="/sign up">Submit &rarr;</button>
+                </div>
+            </form>
+        </div>
+        </div>
+        <div class="outlayer-display">
+            <div style="position: absolute; top: 500px; width: 700px; padding-left: 60px;">
+                Latest 7 items here
+            </div>
+        </div>
+    </body>
+</html>
