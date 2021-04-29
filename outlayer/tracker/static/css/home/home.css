@@ -1,0 +1,53 @@
+*{
+	padding:0;
+	margin:0;
+}
+
+.outlayer-nav{
+    width: 100%;
+    line-height: 90px;
+    background-color: burlywood;
+}
+
+#nav-hello{
+    position: absolute; 
+    right: 600px; 
+    left: 600px; 
+    top:2px; 
+    text-align: center;
+}
+
+#nav-logout{
+    position: relative; 
+    text-align:right; 
+    right:30px;
+}
+
+.form_input{
+    font-family: Roboto;
+    width:25%;
+    padding:1rem 1rem;
+    border-radius: 5rem;
+    background-color: white;
+    border: none;
+    background-color: rgb(226, 215, 215);
+    color: #CC6666;
+}
+
+.column-2{
+    width:100%;
+    padding-top: 60px;
+    text-align: center;
+    background-color:#C5C8C6;
+    height:100vh;
+}
+
+.button{
+    position: absolute;
+    border:none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding:1.0rem 2rem;
+    display: inline-block;
+    background-image: radial-gradient(#55c57a,#04C35C);
+}
