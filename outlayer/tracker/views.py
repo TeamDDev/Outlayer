@@ -36,6 +36,18 @@ def app_view(request, username):
 	else:
 		return render(request,'tasks_notes/index.html')
 
+def profile_view(request, username):
+	if request.method=="GET":
+		return render(request,'tasks_notes/app.html')
+	if request.method=="POST":
+		uzer_qs = UserInfo.objects.filter(name=request.user)
+		uzer_obj = uzer_qs[0]
+		incm = uzer_obj.income
+		incm = request.POST['income']
+		uzer_obj.income = incm
+		uzer_obj.save(update_fields=['income'])
+		return redirect('app',username=request.user)
 
+# Both HttpResponseRedirect(reverse(...)) and redirect(... , ...) works fine
 
 
