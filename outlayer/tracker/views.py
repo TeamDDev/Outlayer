@@ -8,8 +8,6 @@ from django.contrib.auth import login, logout
 def signup_view(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
-        print("Hey")
-        print(form.is_valid())
         if form.is_valid():
             user = form.save()
             Profile.objects.create(name=user, monthly_limit=0, expenses_soFar=0)
