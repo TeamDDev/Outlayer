@@ -22,44 +22,45 @@
                     Hello {{ user }} Welcome to your own Online Budget Tracker System
                 </div>
                 <div id="nav-logout">
-                    Logout
+                    <a href = '{% url "logout" %}'>Logout</a>
                 </div>
             </div>
             </div>
         </nav>
         <div class="outlayer-form">
             <div class="column-2">
-            <form id="out-input">
+            <form id="out-input" action='{% url "add_item" %}' method='post'>
+                {% csrf_token %}
                 <div class="form_group">    
                     <label for="expense_name" id="item" class="label_item">Expense name</label>                 
-                    <input type="text" name="Expense name" class="form_input" placeholder="Your expense name here" id="item" required>            
+                    <input type="text" name="expense_name" class="form_input" placeholder="Your expense name here" id="item" required>            
                 </div>  
                 <br>
                 <div class="form_group">    
                     <label for="expense" id="item" class="label_item">Expense cost</label>                 
-                    <input type="text" name="Expense" class="form_input" placeholder="Your expense here" id="expense" required>            
+                    <input type="text" name="expense_cost" class="form_input" placeholder="Your expense here" id="expense" required>            
                 </div> 
                 <br>
                 <div class="form_group">    
                     <label for="expense" id="item" class="label_item">Expense Type</label>                 
-                    <input type="text" name="Expense" class="form_input" placeholder="Expense type" id="expense" required>            
+                    <input type="text" name="expense_type" class="form_input" placeholder="Expense type" id="expense" required>            
                 </div> 
                 <br>
                 <div class="form_group">    
                     <label for="date" id="item" class="label_item">Expense date</label>                 
-                    <input type="text" name="Date" class="form_input" placeholder="Your date here" id="datepicker" required>            
+                    <input type="text" name="expense_date" class="form_input" placeholder="Your date here" id="datepicker" required>            
                 </div> 
                 <br>
                 <div class="form_group">
-                    <button class="button" formaction="/sign up">Submit &rarr;</button>
+                    <button class="button">Submit</button>
                 </div>
             </form>
         </div>
         <div class="outlayer-display">
             <div style="position: absolute; top: 620px; width: 700px; padding-left: 60px;">
-                <table class="styled-table" style=" width: 700px;">
+                <table class="styled-table" style=" width: 700px; text-align: center;">
                     <thead>
-                        <tr style="text-align:center">
+                        <tr>
                             <th style="width: 180px">Item</th>
                             <th style="width: 180px">Amount(Rs.)</th>
                             <th> Type </th>
@@ -89,15 +90,7 @@
 </html>
         
 <!-- 
-        {% else %}
-        <nav>
-            <div>
-                <div class = "outlayer-nav">
-                <div id="nav-hello">
-                </div>
-            </div>
-            </div>
-        </nav>
+        
 
         <div class="outlayer-form">
             <h2> You are not the authenticated user </h2>
