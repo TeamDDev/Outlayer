@@ -1,20 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head> 
         <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="home.css">
         <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
         <title>
             Outlayer
         </title>
     </head>
     <body>
+    <!--     {% if user.is_authenticated %}   -->
         <nav>
             <div>
                 <div class = "outlayer-nav">
                 <div id="nav-hello">
-                    Hello Welcome to your own Online Budget Tracker System
+                    Hello {{ user }} Welcome to your own Online Budget Tracker System
                 </div>
                 <div id="nav-logout">
                     Logout
@@ -36,8 +41,13 @@
                 </div> 
                 <br>
                 <div class="form_group">    
+                    <label for="expense" id="item" class="label_item">Expense Type</label>                 
+                    <input type="text" name="Expense" class="form_input" placeholder="Expense type" id="expense" required>            
+                </div> 
+                <br>
+                <div class="form_group">    
                     <label for="date" id="item" class="label_item">Expense date</label>                 
-                    <input type="text" name="Date" class="form_input" placeholder="Your date here" id="date" required>            
+                    <input type="text" name="Date" class="form_input" placeholder="Your date here" id="datepicker" required>            
                 </div> 
                 <br>
                 <div class="form_group">
@@ -45,11 +55,57 @@
                 </div>
             </form>
         </div>
-        </div>
         <div class="outlayer-display">
-            <div style="position: absolute; top: 500px; width: 700px; padding-left: 60px;">
-                Latest 7 items here
+            <div style="position: absolute; top: 620px; width: 700px; padding-left: 60px;">
+                <table class="styled-table" style=" width: 700px;">
+                    <thead>
+                        <tr style="text-align:center">
+                            <th style="width: 180px">Item</th>
+                            <th style="width: 180px">Amount(Rs.)</th>
+                            <th> Type </th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in uzer %}
+                        <tr>
+                            <td class="table-light">{{ obj.expenditure_name }}</td>
+                            <td class="table-light">{{ obj.expenditure_amount}}</td>
+                            <td class="table-light">{{ obj.expenditure_type}}</td>
+                            <td class="table-light">{{ obj.expenditure_date }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
+        $(function(){
+            $("#datepicker").datepicker();
+            dateFormat: "yyyy-mm-dd",
+            changeMonth: true,
+            changeYear: true
+        });
     </body>
 </html>
+        
+<!-- 
+        {% else %}
+        <nav>
+            <div>
+                <div class = "outlayer-nav">
+                <div id="nav-hello">
+                </div>
+            </div>
+            </div>
+        </nav>
+
+        <div class="outlayer-form">
+            <h2> You are not the authenticated user </h2>
+            <br>
+            New user? <a href='{% url "signup" %}'><strong> Register here</strong></a>
+            <br>
+            Aleady a user? <a href='{% url "login" %}'><strong> Login here</strong></a>
+        </div>
+        {% endif %}
+-->
+
