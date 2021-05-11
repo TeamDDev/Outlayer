@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from tracker.forms import UserForm
 from .models import Profile
+from django.contrib.auth.forms import AuthenticationForm
 
 def signup_view(request):
     if request.method == 'POST':
@@ -11,7 +12,7 @@ def signup_view(request):
             return redirect('login')
     else:
         form = UserForm()
-    return render('registeration/signup.html',{'form':form})
+    return render(request, 'registration/signup.html',{'form':form})
 
 def login_view(request):
         if request.method == 'POST':
@@ -22,7 +23,7 @@ def login_view(request):
                return redirect('app',username=user.username)
         else:
             form=AuthenticationForm()
-        return render(request, 'registeration/login.html',{'form':form})
+        return render(request, 'registration/login.html',{'form':form})
 
 def logout_view(request):
          logout(request)
