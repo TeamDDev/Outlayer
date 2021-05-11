@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from tracker.forms import UserForm
 #from django.contrib.auth.forms import UserCreationForm
-from .models import Profile
+from .models import Profile, Records
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 
@@ -22,7 +22,7 @@ def login_view(request):
            if form.is_valid():
                user=form.get_user()
                login(request,user)
-               return redirect('app',username=user.username)
+               return redirect('home', username=user.username)
         else:
             form=AuthenticationForm()
         return render(request, 'registration/login.html',{'form':form})
@@ -30,14 +30,20 @@ def login_view(request):
 def logout_view(request):
          logout(request)
          return redirect('login')
+
         
-def app_view(request, username):
-	if request.user.is_authenticated:
-		budget_qs = UserInfo.objects.filter(name=request.user)
-		uzer_qs = BudgetInfo.objects.filter(user=request.user).order_by('-date_added')
-		return render(request,'tasks_notes/index.html',{'budget':budget_qs[0],'uzer':uzer_qs[0:5]})
-	else:
-		return render(request,'tasks_notes/index.html')
+def home_view(request, username):
+    if request.user.is_authenticated:
+        budget_qs = Profile.objects.filter(name=request.user)
+        uzer_qs = Records.objects.filter(expenditure_user=request.user).order_by('-expenditure_date')
+        if budget_qs or uzer_qs:
+            return render(request,'home/home.html',{'budget':budget_qs[0],'uzer':uzer_qs[0:5]})
+        else:
+            budget_qs = [0]
+            uzer_qs = [0]
+            return render(request,'home/home.html',{'budget':budget_qs[0],'uzer':uzer_qs[0:5]})
+    else:
+        return render(request,'home/home.html')
 
 def profile_view(request, username):
 	if request.method=="GET":
