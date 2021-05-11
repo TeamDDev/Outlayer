@@ -1,19 +1,22 @@
 from django.shortcuts import render, redirect
-from tracker.forms import UserForm
-#from django.contrib.auth.forms import UserCreationForm
+#from tracker.forms import UserForm
+from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, Records
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
+from django.http import HttpResponseRedirect, HttpResponse
+from django.urls import reverse
 
 def signup_view(request):
     if request.method == 'POST':
-        form = UserForm(request.POST)
+        form = UserCreationForm(request.POST)
+        print(form.is_valid())
         if form.is_valid():
             user = form.save()
             Profile.objects.create(name=user, monthly_limit=0, expenses_soFar=0)
             return redirect('login')
     else:
-        form = UserForm()
+        form = UserCreationForm()
     return render(request, 'registration/signup.html',{'form':form})
 
 def login_view(request):
@@ -31,17 +34,33 @@ def logout_view(request):
          logout(request)
          return redirect('login')
 
+
+def additem_view(request):
+    expense_name = request.POST['expense_name']
+    expense_cost = request.POST['expense_cost']
+    expense_date = request.POST['expense_date']
+    expense_type = request.POST['expense_type']
+    Records.objects.create(expenditure_user= request.user, 
+                           expenditure_name=expense_name, 
+                           expenditure_amount=expense_cost, 
+                           expenditure_type=expense_type, 
+                           expenditure_date=expense_date)
+    user_qs = Profile.objects.filter(name=request.user)
+    user_obj = user_qs[0]
+    total = user_obj.expenses_soFar
+    total+= float(expense_cost)
+    user_obj.expenses_soFar = total
+    user_obj.save(update_fields=['expenses_soFar'])
+    return HttpResponseRedirect(reverse('home', kwargs={'username':request.user}))
+
+
         
 def home_view(request, username):
     if request.user.is_authenticated:
+        print(request.user)
         budget_qs = Profile.objects.filter(name=request.user)
         uzer_qs = Records.objects.filter(expenditure_user=request.user).order_by('-expenditure_date')
-        if budget_qs or uzer_qs:
-            return render(request,'home/home.html',{'budget':budget_qs[0],'uzer':uzer_qs[0:5]})
-        else:
-            budget_qs = [0]
-            uzer_qs = [0]
-            return render(request,'home/home.html',{'budget':budget_qs[0],'uzer':uzer_qs[0:5]})
+        return render(request,'home/home.html',{'budget':request.user,'uzer':uzer_qs[0:5]})
     else:
         return render(request,'home/home.html')
 
