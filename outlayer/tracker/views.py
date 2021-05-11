@@ -63,7 +63,7 @@ def home_view(request, username):
         return render(request,'home/home.html',{'budget':request.user,'uzer':uzer_qs[0:5]})
     else:
         return render(request,'home/home.html')
-
+'''
 def profile_view(request, username):
 	if request.method=="GET":
 		return render(request,'tasks_notes/app.html')
@@ -75,6 +75,7 @@ def profile_view(request, username):
 		uzer_obj.income = incm
 		uzer_obj.save(update_fields=['income'])
 		return redirect('app',username=request.user)
+'''
 
 # Both HttpResponseRedirect(reverse(...)) and redirect(... , ...) works fine
 
