@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-#from tracker.forms import UserForm
-from django.contrib.auth.forms import UserCreationForm
+from tracker.forms import UserForm
+#from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, Records
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
@@ -9,14 +9,14 @@ from django.urls import reverse
 
 def signup_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserForm(request.POST)
         print(form.is_valid())
         if form.is_valid():
             user = form.save()
             Profile.objects.create(name=user, monthly_limit=0, expenses_soFar=0)
             return redirect('login')
     else:
-        form = UserCreationForm()
+        form = UserForm()
     return render(request, 'registration/signup.html',{'form':form})
 
 def login_view(request):
