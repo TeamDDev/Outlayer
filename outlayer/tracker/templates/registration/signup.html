@@ -2,64 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href=' https://fonts.googleapis.com/css?family=Yatra+One' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" type='text/css'>
-    <link rel="stylesheet" href="{% static 'css/signup/grid_layout.css' %}">
-    <link rel="stylesheet" href="{% static 'css/signup/form.css' %}">
-    <title>Sign Up Page</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>SignUp</title>
 </head>
 <body>
-    <div class="row">
-        <div class="column">
-            
-        </div>
-        <div class="column-2">
-            <div class="heading-primary">Out-Layer</div>
-            <div class="heading-secondary"> Sign Up</div>
-            
-            <div class="Form">
-                <form class="form_beginning" method="POST" id="loginform" action='{% url "signup" %}'>
-                    {% csrf_token %}
-                    <!--  username label   -->
-                    <div class="form_group">
-                        <label for="email" id="username" class="label_username">Email</label>
-                        <input type="text" name="email" class="form_input" placeholder="your email here" id="username" required>
-                    </div>
-
-                    <div class="form_group">
-                        <label for="id_username" id="username" class="label_username">username</label>
-                        <input type="text" name="username" class="form_input" placeholder="your username here" id="id_username" required>
-                    </div>
-
-                    <!--  password label   -->
-                    <div class="form_group">
-                        <label for="id_password1">Password</label>
-                        <input type="password" name="password1" class="form_input" placeholder="your password here" id="id_password1" required>
-                    </div>
-
-                    <div class="form_group">
-                        <label for="id_password2">Re-Password</label>
-                        <input type="password" name="password2" class="form_input" placeholder="re-enter your password" id="id_password2" required>
-                    </div>
-
-
-                    <!--  submit button   -->
-                    <div class="form_group">
-                        <button class="button" type="submit">Submit</button>
-                    </div>
-
-                </form>
-                <div class="recommendation">
-                    <p class="recommendation_text">Already have an account?</p> <a href='{% url "login" %}'><strong> Login here. </strong></a>
-                </div>
-            </div>
-        </div>    
+    
+    <div class="container">
+        <h1 class="center">Outlayer</h1>
+        <h2 class="center">Create an account</h2>
+        <form method='post' action = '{% url "signup" %}'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class='btn waves-effect' type="submit">Register</button>
+        </form>
+        <p class="recommendation_text">Already have an account?</p> <a href='{% url "login" %}'><strong> Login here. </strong></a>
     </div>
 </body>
 </html>
-
-
-
-
