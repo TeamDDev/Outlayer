@@ -35,6 +35,7 @@ def logout_view(request):
          return redirect('login')
 
 
+
 def additem_view(request):
     expense_name = request.POST['expense_name']
     expense_cost = request.POST['expense_cost']
@@ -52,21 +53,20 @@ def additem_view(request):
     user_obj.expenses_soFar = total
     user_obj.save(update_fields=['expenses_soFar'])
     return HttpResponseRedirect(reverse('home', kwargs={'username':request.user}))
-
-
-        
+       
 def home_view(request, username):
     if request.user.is_authenticated:
         print(request.user)
         budget_qs = Profile.objects.filter(name=request.user)
         uzer_qs = Records.objects.filter(expenditure_user=request.user).order_by('-expenditure_date')
-        return render(request,'home/home.html',{'budget':request.user,'uzer':uzer_qs[0:5]})
+        return render(request,'home/home.html',{'budget':request.user,'uzer':uzer_qs[0:7]})
     else:
         return render(request,'home/home.html')
-'''
+
+
 def profile_view(request, username):
 	if request.method=="GET":
-		return render(request,'tasks_notes/app.html')
+		return render(request,'home/profile.html')
 	if request.method=="POST":
 		uzer_qs = UserInfo.objects.filter(name=request.user)
 		uzer_obj = uzer_qs[0]
@@ -75,7 +75,7 @@ def profile_view(request, username):
 		uzer_obj.income = incm
 		uzer_obj.save(update_fields=['income'])
 		return redirect('app',username=request.user)
-'''
+
 
 # Both HttpResponseRedirect(reverse(...)) and redirect(... , ...) works fine
 
