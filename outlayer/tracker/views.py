@@ -64,18 +64,17 @@ def home_view(request, username):
         return render(request,'home/home.html')
 
 
-def profile_view(request, username):
+def profile_view(request):
 	if request.method=="GET":
 		return render(request,'home/profile.html')
 	if request.method=="POST":
-		uzer_qs = UserInfo.objects.filter(name=request.user)
+		uzer_qs = Profile.objects.filter(name=request.user)
 		uzer_obj = uzer_qs[0]
-		incm = uzer_obj.income
+		incm = uzer_obj.monthly_limit
 		incm = request.POST['income']
-		uzer_obj.income = incm
-		uzer_obj.save(update_fields=['income'])
-		return redirect('app',username=request.user)
-
+		uzer_obj.monthly_limit = incm
+		uzer_obj.save(update_fields=['monthly_limit'])
+		return redirect('profile',username=request.user)
 
 # Both HttpResponseRedirect(reverse(...)) and redirect(... , ...) works fine
 
