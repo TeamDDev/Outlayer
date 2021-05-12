@@ -19,7 +19,7 @@
             <div>
                 <div class = "outlayer-nav">
                 <div id="nav-hello">
-                    Hello {{ user }}! Welcome to your own Online Budget Tracker System
+                    Hello <a href = '{% url "profile" %}'>{{ user }}!</a>Welcome to your own Online Budget Tracker System
                     <br>
                 </div>
                 <div id="nav-logout">
@@ -54,7 +54,7 @@
                 <br>
                 <div class="form_group">    
                     <label for="date" id="item" class="label_item">Expense date</label>                 
-                    <input type="text" name="expense_date" class="form_input" placeholder="Your date here" id="datepicker" required>            
+                    <input type="text" name="expense_date" class="form_input" placeholder="date format: yyyy-dd-mm" id="datepicker" required>            
                 </div> 
                 <br>
                 <div class="form_group">
